@@ -6,7 +6,8 @@ import com.yahoo.YahooStockURL;
 import org.jsoup.nodes.Document;
 
 import java.io.IOException;
-import java.sql.SQLOutput;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 
 public class YahooStock extends YahooStockAPI {
@@ -22,6 +23,13 @@ public class YahooStock extends YahooStockAPI {
 
         // 存放結果
         StringBuilder result = new StringBuilder();
+
+        // 日期轉字串
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyyMMdd");
+        String strDate = simpleDateFormat.format(new Date());
+
+        // 檔名
+        String fileName = "D:\\奇摩股市\\YahooStock_" + strDate + ".txt";
 
         String parse = null;
         String parseDate = null;
@@ -41,7 +49,7 @@ public class YahooStock extends YahooStockAPI {
         parseDate = yahooStockAPI.parseDate(document);
         result.append(header).append(parse).append(parseDate);
 
-        writer.WriteToTxt("D:\\test\\YahooStock.txt", result.toString());
+        writer.WriteToTxt(fileName, result.toString());
         System.out.println(result.toString());
 
     }

@@ -1,0 +1,12 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="YahooFinanceScraping:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/YahooFinanceScraping_jar</output-path>
+    <root id="archive" name="YahooFinanceScraping.jar">
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="module-output" name="YahooFinanceScraping" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/jsoup/jsoup/1.11.3/jsoup-1.11.3.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
